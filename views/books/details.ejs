@@ -5,30 +5,39 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
    </head>
 
    <body>
-      <h1><%= books.name %> </h1>
-      <h2><%= books.author %></h2>
+      <div class="container">
 
 
-      <h3>Description:</h3>
-      <p><%= books.description %> </p>
+         <h1><%= books.name %> </h1>
+         <h2><%= books.author %></h2>
 
-      <h3>Details:</h3>
 
-      <p>Library of Congress Classification: <%= books.lcClass %> </p>
-      <p>Publisher: <%= books.publisher %> </p>
-      <p>Year: <%= books.year %> </p>
-      <p>Category: <%= books.category %> </p>
+         <h3>Description:</h3>
+         <p><%= books.description %> </p>
 
-      <p>Keywords:
-         <% for (let i = 0; i<books.keywords.length; i++){%>
-         <span>
+         <h3>Details:</h3>
+         <p>Name: <%= books.name %></p>
+         <p>Author: <%= books.author %></p>
+         <p>LoC Classification: <%= books.lcClass %> </p>
+         <p>Publisher: <%= books.publisher %> </p>
+         <p>Year: <%= books.year %> </p>
+         <p>Category: <%= books.category %> </p>
+
+         <p>
+            Keywords:
+            <% for (let i = 0; i<books.keywords.length; i++){%>
             <%= books.keywords[i] %><%= i === books.keywords.length - 1  ? "" : "," %>
-         </span>
-         <%}%>
-      </p>
+            <%}%>
+         </p>
+         
+         <a href="/index/details/<%= books.id %>/edit ">edit</a><a href="/index">go back</a>
+
+
+      </div>
    </body>
 
 </html>

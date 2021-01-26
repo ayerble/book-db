@@ -5,17 +5,21 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Index</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
    </head>
 
    <body>
 
+      <div class="container">
+         <h1>Book Index</h1>
+         <ul>
+            <% for (let book of books){ %>
+            <li> <a href="/index/details/<%=book._id%>"> <%= book.name %> </a> </li>
+            <% } %>
+         </ul>
 
-      <h1>Book Index</h1>
-      <ul>
-         <% for (let book of books){ %>
-         <li> <a href="/index/<%=book._id%>"> <%= book.name %> </a> </li>
-         <% } %>
-      </ul>
+         <a href="/index/new">Add new book:</a>
+      </div>
    </body>
 
 
